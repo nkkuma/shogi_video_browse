@@ -39,9 +39,11 @@
             <img src="static/img/SHOGIWEB_TITLE.png" width="100%">
         </p>
         <!-- 自動更新か否か -->
-        <input id="toggle-event" type="checkbox" data-toggle="toggle">
+        <div style="text-align:center;"><p>自動更新</p></div>
+        <div style="text-align:center;"><input id="toggle-event" type="checkbox" data-toggle="toggle"></div>
         <!-- id: display id -->
         <div style="text-align:center;"><p>id: {{ gameid }}</p></div>
+        <!-- 将棋盤 -->
         <div style="max-width: 90%; background-image: url('static/img/ban.png'); text-align:center;  margin: 0 auto;" >
             {% include "shogiban.html" %}
         </div>
