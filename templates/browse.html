@@ -16,12 +16,14 @@
         <meta name="twitter:url" content="{{ imageurl }}" />
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
         <link rel="stylesheet" href="static/css/browse_style.css">
         <link rel="stylesheet" href="static/css/shogiban.css">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
         <script type="text/javascript" src="static/js/utils.js"></script>
         <script type="text/javascript" src="static/js/shogibanutil.js"></script>
         <script type="text/javascript" src="static/js/shogiban.js"></script>
@@ -40,13 +42,13 @@
         <input id="toggle-event" type="checkbox" data-toggle="toggle">
         <!-- id: display id -->
         <div style="text-align:center;"><p>id: {{ gameid }}</p></div>
-        <div style="text-align:center; max-width: 90%; background-image: url('static/img/ban.png')" >
+        <div style="max-width: 90%; background-image: url('static/img/ban.png'); text-align:center;  margin: 0 auto;" >
             {% include "shogiban.html" %}
         </div>
         <br><br>
         <!-- TODO: set kif -->
-        <div style="text-align:center; margin: 0 auto;">
-            <table id="kif_table">
+        <div>
+            <table id="kif_table" style="text-align:center; margin: 0 auto;">
                 <thead>
                     <tr><th>手数</th><th>棋譜</th></tr>
                 </thead>
