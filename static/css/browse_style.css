@@ -4,7 +4,9 @@ thead, tbody {
 tbody {
   overflow-x: hidden;
   overflow-y: auto;
-  height: 300px;
+}
+#kif_table_tbody {
+  max-height: 300px;
 }
 th, td {
   width: 100px;
