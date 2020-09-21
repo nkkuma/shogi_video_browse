@@ -31,7 +31,7 @@ var game_id = location.search.replace("?gameid=","");
 
 var countup = function(){
     $.get("/kif", { gameid: game_id, tesu: current_tesu }, function(data){
-        kifs = JSON.parse(data).kifs;
+        kifs = data.kifs;
         if ((kifs.length != 1) || (kifs[0] != "")){
             for(let i = 0; i < kifs.length; i++) {
                 update_kif(current_tesu + 1, kifs[i]);
