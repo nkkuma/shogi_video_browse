@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <!-- header -->
+        <p class="lead">
+            <div style="display: none; text-align: center;">Shogiban to Kif developed by えぬっくま</div>
+            <div style="display: none; text-align: center;">将棋盤の画像認識サイトです。写真を撮って棋譜を作成しよう！</div>
+            <img src="static/img/SHOGIWEB_TITLE.png" width="100%">
+            <img id="howtoimg" src='static/img/shogi_intro.png' width="100%" height="auto"></img>
+        </p>
+        <!-- input field of id -->
+        <form action="/validate" method="post">
+            <div>
+                <label for="name">id</label>
+                <input type="text" id="gameid" name="gameid">
+            </div>
+            <input type="submit" value="watch">
+        </form>
+        <!-- when failed -->
+        {% if err_reason %}
+            {% if val=="regex" %}
+            <div id="invalidFormat">入力IDはすべて半角英数字で入力して下さい。</div>
+            {% elif val=="notfound" %}
+            <div id="nogameid">入力されたIDの対局は見つかりませんでした。</div>
+            {% endif %}
+        {% endif %}
+    </body>
+</html>

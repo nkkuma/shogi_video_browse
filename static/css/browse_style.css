@@ -1,0 +1,11 @@
+thead, tbody {
+  display: block;
+}
+tbody {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 300px;
+}
+th, td {
+  width: 100px;
+}

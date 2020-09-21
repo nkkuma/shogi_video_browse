@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="twitter:id" content="{{ twitter_id }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@nkkuma_service" />
+        <meta name="twitter:description" content="@nkkuma_service" />
+        <meta name="twitter:title" content="えぬっくま将棋中継" />
+        <meta name="twitter:description" content="えぬっくま将棋中継" />
+
+        <meta name="twitter:image" content="{{ imageurl }}" />
+        <meta name="twitter:image:width" content="842" />
+        <meta name="twitter:image:height" content="421" />
+        <meta name="twitter:url" content="{{ imageurl }}" />
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="css/browse_style.css">
+    </head>
+
+    <body>
+        <!-- header -->    
+        <p class="lead">
+            <div style="display: none; text-align: center;">Shogiban to Kif developed by えぬっくま</div>
+            <div style="display: none; text-align: center;">将棋盤の画像認識サイトです。写真を撮って棋譜を作成しよう！</div>
+            <img src="static/img/SHOGIWEB_TITLE.png" width="100%">
+        </p>
+        <!-- id: display id -->
+        <div style="text-align:center;"><p>id: {{ gameid }}</p></div>
+        <!-- shogiban: developed by nkkuma, distributed in sfenreader_gae -->
+        <div style="text-align:center;"><img src={{ imageurl }}" max-width="90%" /></div>
+        <br><br>
+        <!-- TODO: set kif -->
+        <div style="text-align:center;">
+            <table>
+                <thead>
+                    <tr><th>手数</th><th>棋譜</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th>1</th><th>７六歩</th></tr>
+                    <tr><th>2</th><th>８四歩</th></tr>
+                </tbody>
+            </table>
+        </div>
+        <br><br>
+        <!-- footer -->
+        <div style="text-align:center;">developed by nkkuma</div>
+        <br><br>
+        <div style="text-align:center;">This software includes the work that is distributed in <a href="https://github.com/shibacho/sfenreader_gae">@sfenreader_gae</a>.</div>
+    </body>
+</html>
