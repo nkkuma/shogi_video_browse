@@ -12,7 +12,7 @@ function fix(string){
   var result_place = document.getElementById('board');
   // fix
   result_json["ban_result"][fix_place] = string;
-  result_img.children[0].src = "./img/koma/"+kanji2alphabet(string).trim()+".png";
+  result_img.children[0].src = "./static/img/koma/"+kanji2alphabet(string).trim()+".png";
   // result_place.textContent = json_to_kif(result_json);
 
   // set_uncolor(fix_place);
