@@ -47,6 +47,13 @@ function alphabet2kanji(koma){
     return koma[0] + kanji[alphabet.indexOf(koma.substr(1))];
 }
 
+function kanji2alphabet(koma){
+    // １文字目は先後を表す字なので変換しない
+    var alphabet = ["_ ","fu","ky","ke","gi","ki","ka","hi","ou","to","ny","nk","ng","um","ry"];
+    var kanji    = ["・","歩","香","桂","銀","金","角","飛","玉","と","杏","圭","全","馬","龍"];
+    return koma[0] + alphabet[kanji.indexOf(koma.substr(1))];
+}
+
 function json2itte(json){
     var next_place = String(json["to"]["suji"]) + String(json["to"]["dan"]);
     var koma = alphabet2kanji(json["piece"]);
