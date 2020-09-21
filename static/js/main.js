@@ -39,7 +39,7 @@ var countup = function(){
             }
         }
     });
-}
+};
 
 $(function(){
     $('#toggle-event').change(function() {
