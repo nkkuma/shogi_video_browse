@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8" />
+
         <meta name="twitter:id" content="{{ twitter_id }}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@nkkuma_service" />
@@ -12,7 +14,6 @@
         <meta name="twitter:image:width" content="842" />
         <meta name="twitter:image:height" content="421" />
         <meta name="twitter:url" content="{{ imageurl }}" />
-        <meta charset="UTF-8" />
 
         <link rel="stylesheet" href="css/browse_style.css">
     </head>
@@ -24,20 +25,21 @@
             <div style="display: none; text-align: center;">将棋盤の画像認識サイトです。写真を撮って棋譜を作成しよう！</div>
             <img src="static/img/SHOGIWEB_TITLE.png" width="100%">
         </p>
+        <!-- 自動更新か否か -->
+        <input id="toggle-event" type="checkbox" data-toggle="toggle">
         <!-- id: display id -->
         <div style="text-align:center;"><p>id: {{ gameid }}</p></div>
-        <!-- shogiban: developed by nkkuma, distributed in sfenreader_gae -->
-        <div style="text-align:center;"><img src={{ imageurl }}" max-width="90%" /></div>
+        <div style="text-align:center; max-width: 90%;" >
+            {% include "shogiban.html" %}
+        </div>
         <br><br>
         <!-- TODO: set kif -->
-        <div style="text-align:center;">
-            <table>
+        <div style="text-align:center; max-height: 200px">
+            <table id="kif_table">
                 <thead>
                     <tr><th>手数</th><th>棋譜</th></tr>
                 </thead>
                 <tbody>
-                    <tr><th>1</th><th>７六歩</th></tr>
-                    <tr><th>2</th><th>８四歩</th></tr>
                 </tbody>
             </table>
         </div>

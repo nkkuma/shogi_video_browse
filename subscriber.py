@@ -1,3 +1,4 @@
+# coding: utf-8
 import urllib.parse
 
 def get_current_sfen():
