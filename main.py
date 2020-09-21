@@ -51,7 +51,7 @@ def browse():
     return render_template('browse.html', gameid=gameid, twitterid=twitterid, imageurl=imageurl)
 
 @app.route('/kif')
-def browse():
+def kif_api():
     gameid = request.args.get('gameid')
     tesu = request.args.get('tesu')
     kifs = getkif(gameid, tesu)
