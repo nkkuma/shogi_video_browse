@@ -1,0 +1,92 @@
+#board_img{
+    position: relative;
+    background-image: url(../img/ban.png);
+    background-size: contain;
+}
+#board_img:before {
+    content:"";
+    display: block;
+    /*padding-top: 108%;*/ /* 高さを幅の108%に固定 */
+}
+#board_koma {
+    /*position: absolute;*/
+    /*top: 11%;*/
+    left: 3%;
+}
+#board_koma tr{
+    width: 100%;
+    height: 9%;
+}
+#board_koma tr td{
+    padding: 0 0;
+}
+#board_koma tr td img{
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width /***/:auto;
+    vertical-align: bottom;
+}
+
+/*持ち駒用*/
+
+.mochigoma-list {
+    display: table;
+    width: 100%;
+    padding-inline-start: 10%;
+    padding-inline-end: 10%;
+}
+.mochigoma {/*親div*/
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;/*相対配置*/
+}
+.mochigoma p {
+    position: absolute;/*絶対配置*/
+    color: black;
+    top: 0;
+    right: 0;
+}
+.mochigoma img {
+    width: 100%;
+    opacity: 0.5;
+}
+#gote_mochi{
+    /*position: absolute;*/
+    /*top: 1vw;*/
+    margin-bottom: 0px;
+}
+#sente_mochi{
+    /*padding-top: calc(1vw + 7.5%);*/
+    /*padding-bottom: 0.5vw;*/
+    margin-bottom: 0px;
+}
+
+/*修正Interface用*/
+
+.horizontal-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-inline-start: 1vw;
+}
+
+.item {
+    /* 横スクロール用 */
+    display: inline-block;
+    width: 9%;
+
+    /* 見た目調整 */
+    margin: 1vw;
+    background: rgba(255, 70, 0, 0.4);
+}
+
+.item > div > img{
+    width: 100%;
+}
+
+/*先手後手表示用*/
+.a-sengo{
+    width: 100%;
+}

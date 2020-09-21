@@ -1,18 +1,16 @@
+# coding: utf-8
 from flask import Flask, request, render_template, redirect, url_for
 from flask_cors import CORS
 from google.cloud import storage
-from validate import validate_gameid
 from time import time
+import json
+from validate import validate_gameid
 from subscriber import get_current_sfen
+from getkif import getkif
 
 # 自身の名称を app という名前でインスタンス化する
 app = Flask(__name__)
 CORS(app)
-
-# default response header
-headers = {
-    'Access-Control-Allow-Origin': '*'
-}
 
 # GCS bucket
 bucketname = "shogiban4research"
@@ -51,6 +49,13 @@ def browse():
     twitterid = str(time())[:-3]
     imageurl = sfenreader_url + get_current_sfen()
     return render_template('browse.html', gameid=gameid, twitterid=twitterid, imageurl=imageurl)
+
+@app.route('/kif')
+def browse():
+    gameid = request.args.get('gameid')
+    tesu = request.args.get('tesu')
+    kifs = getkif(gameid, tesu)
+    return app.response_class(json.dumps(kifs), content_type='application/json')
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, threaded=True)
