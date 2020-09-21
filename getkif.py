@@ -2,7 +2,7 @@
 from google.cloud import storage
 import json
 
-client = storage.Client(project=credentials.project_id)
+client = storage.Client()
 bucket_name = 'shogiban_img'
 bucket = client.get_bucket(bucket_name)
 
