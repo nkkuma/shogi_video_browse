@@ -21,8 +21,8 @@ function update_kif(tesu, kif_json){
     upsert_table(tesu, kif_json.kif);
     // 盤面変更
     move_koma(kif_json, tesu);
-    // しゃべる
-    kifuyomi(sengo, kif_json);
+    // TODO: しゃべる
+    kifuyomi((tesu-1)%2, kif_json.kif);
 }
 
 var interval_id = 0;

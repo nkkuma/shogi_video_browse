@@ -37,7 +37,7 @@ function direction2kifuyomi(string){
 }
 
 function kifuyomi(sengo, kif){
-    let folderpath = "./sound/polly/mizuki/";
+    let folderpath = "static/sound/polly/mizuki/";
     let ext = ".mp3";
     let next_move  = kif.charAt(0)+kif.charAt(1);
     let koma       = koma2kifuyomi(kif.charAt(2));

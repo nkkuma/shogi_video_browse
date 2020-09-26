@@ -53,7 +53,7 @@ def browse():
 @app.route('/kif')
 def kif_api():
     gameid = request.args.get('gameid')
-    tesu = request.args.get('tesu')
+    tesu = int(request.args.get('tesu'))
     kifs = getkif(gameid, tesu)
     return app.response_class(json.dumps(kifs), content_type='application/json')
 

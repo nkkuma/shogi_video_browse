@@ -24,44 +24,59 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <script type="text/javascript" src="static/js/variables.js"></script>
         <script type="text/javascript" src="static/js/utils.js"></script>
         <script type="text/javascript" src="static/js/shogibanutil.js"></script>
         <script type="text/javascript" src="static/js/shogiban.js"></script>
         <script type="text/javascript" src="static/js/sound.js"></script>
-        <script type="text/javascript" src="static/js/inits.js"></script>
+        <script type="text/javascript" src="static/js/main.js"></script>
     </head>
 
     <body>
         <!-- header -->    
-        <p class="lead">
-            <div style="display: none; text-align: center;">Shogiban to Kif developed by えぬっくま</div>
-            <div style="display: none; text-align: center;">将棋盤の画像認識サイトです。写真を撮って棋譜を作成しよう！</div>
-            <img src="static/img/SHOGIWEB_TITLE.png" width="100%">
-        </p>
+        
+        <div class="container-fluid">
+            <div class="row" style="background-color: burlywood;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div style="display: none; text-align: center;">Shogiban to Kif developed by えぬっくま</div>
+                    <div style="display: none; text-align: center;">将棋盤の画像認識サイトです。写真を撮って棋譜を作成しよう！</div>
+                    <img src="static/img/SHOGIWEB_TITLE.png" width="100%">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
         <!-- 自動更新か否か -->
-        <div style="text-align:center;"><p>自動更新</p></div>
-        <div style="text-align:center;"><input id="toggle-event" type="checkbox" data-toggle="toggle"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">自動更新(10秒毎)：<input id="toggle-event" type="checkbox" data-toggle="toggle"></div>
         <!-- id: display id -->
         <div style="text-align:center;"><p>id: {{ gameid }}</p></div>
-        <!-- 将棋盤 -->
-        <div style="max-width: 90%; background-image: url('static/img/ban.png'); text-align:center;  margin: 0 auto;" >
-            {% include "shogiban.html" %}
+        <!-- TODO: set latest kif -->
+        <div style="text-align:center;"><p>手数：駒の動き</p></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <!-- 将棋盤 -->
+                <div class="col-lg-5">
+                    <div style="max-width: 90%; background-image: url('static/img/ban.png'); text-align:center;  margin: 0 auto;" >
+                        {% include "shogiban.html" %}
+                    </div>
+                </div>
+                <!-- 棋譜 -->
+                <div class="col-lg-2">
+                    <table id="kif_table" style="text-align:center; margin: 0 auto;">
+                        <thead>
+                            <tr><th>手数</th><th>棋譜</th></tr>
+                        </thead>
+                        <tbody id="kif_table_tbody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
         </div>
-        <br><br>
-        <!-- TODO: set kif -->
-        <div>
-            <table id="kif_table" style="text-align:center; margin: 0 auto;">
-                <thead>
-                    <tr><th>手数</th><th>棋譜</th></tr>
-                </thead>
-                <tbody id="kif_table_tbody">
-                </tbody>
-            </table>
-        </div>
-        <br><br>
         <!-- footer -->
-        <div style="text-align:center;">developed by nkkuma</div>
-        <br><br>
-        <div style="text-align:center;">This software includes the work that is distributed in <a href="https://github.com/shibacho/sfenreader_gae">@sfenreader_gae</a>.</div>
+        <br>
+        <div style="text-align:center;" class="h5">developed by nkkuma</div>
+        <div style="text-align:center;" class="h6">This software includes the work that is distributed in <a href="https://github.com/shibacho/sfenreader_gae">@sfenreader_gae</a>.</div>
     </body>
 </html>
