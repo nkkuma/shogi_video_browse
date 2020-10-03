@@ -5,9 +5,13 @@ tbody {
   overflow-x: hidden;
   overflow-y: auto;
 }
-#kif_table_tbody {
+#kif_table {
+  text-align: center;
   max-height: 300px;
+  max-inline-size: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
-th, td {
+/* th, td {
   width: 100px;
-}
+} */

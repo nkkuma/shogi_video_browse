@@ -52,6 +52,9 @@ function fix_mochigoma(method,sengo,string){
 }
 
 function move_koma(json, sengo){
+  // すべての背景を透明化
+  reset_bgcolor();
+
   // 動かす前の駒をなくす
   if(json["from"]["uchi"] == false){
     // 動かす前の場所の駒をなくす
@@ -79,6 +82,9 @@ function move_koma(json, sengo){
     let koma = alphabet2kanji(json["piece"]);
     fix(koma);
   }
+
+  // 動かした場所の背景を黄色くする
+  set_color_yellow(String(9-json["to"]["suji"])  +String(json["to"]["dan"]-1));
 }
 
 function set_kif(teban, data){

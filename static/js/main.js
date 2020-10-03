@@ -4,19 +4,12 @@ function makeTwitterId() {
 }
 
 function upsert_table(tesu, kif){
-    let table = document.getElementById('kif_table');
-    let newRow = table.insertRow();
-
-    let newCell = newRow.insertCell();
-    let newText = document.createTextNode(tesu);
-    newCell.appendChild(newText);
-
-    newCell = newRow.insertCell();
-    newText = document.createTextNode(kif);
-    newCell.appendChild(newText);
+    $('#kif_table_tbody').append('<tr><th scope="row">' + String(tesu) + '</th><td>' + kif + '</td></tr>');
 }
 
 function update_kif(tesu, kif_json){
+    // ヘッダにKIFを表示
+    $("#latest_kif").text(String(tesu) + "手目: " + kif_json.kif);
     // テーブルにKIFを表示
     upsert_table(tesu, kif_json.kif);
     // 盤面変更

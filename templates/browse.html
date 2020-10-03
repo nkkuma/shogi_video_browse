@@ -27,7 +27,7 @@
         <script type="text/javascript" src="static/js/variables.js"></script>
         <script type="text/javascript" src="static/js/utils.js"></script>
         <script type="text/javascript" src="static/js/shogibanutil.js"></script>
-        <script type="text/javascript" src="static/js/shogiban.js"></script>
+        <script type="text/javascript" src="static/js/shogibans.js"></script>
         <script type="text/javascript" src="static/js/sound.js"></script>
         <script type="text/javascript" src="static/js/main.js"></script>
     </head>
@@ -51,7 +51,7 @@
         <!-- id: display id -->
         <div style="text-align:center;"><p>id: {{ gameid }}</p></div>
         <!-- TODO: set latest kif -->
-        <div style="text-align:center;"><p>手数：駒の動き</p></div>
+        <div style="text-align:center;"><p id="latest_kif">手数：駒の動き</p></div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2"></div>
@@ -62,16 +62,16 @@
                     </div>
                 </div>
                 <!-- 棋譜 -->
-                <div class="col-lg-2">
-                    <table id="kif_table" style="text-align:center; margin: 0 auto;">
+                <div class="col-lg-3">
+                    <table id="kif_table" class="table" style="text-align:center; margin: 0 auto;">
                         <thead>
-                            <tr><th>手数</th><th>棋譜</th></tr>
+                            <tr><th scope="col">手数</th><th scope="col">棋譜</th></tr>
                         </thead>
                         <tbody id="kif_table_tbody">
                         </tbody>
                     </table>
                 </div>
-                <div class="col-lg-3"></div>
+                <div class="col-lg-2"></div>
             </div>
         </div>
         <!-- footer -->

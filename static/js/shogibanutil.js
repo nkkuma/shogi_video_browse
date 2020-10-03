@@ -11,6 +11,17 @@ function set_uncolor(fix_place){
     var result_img = get_result_img(fix_place);
     result_img.style.backgroundColor = 'transparent';
 }
+function set_color_yellow(fix_place){
+    var result_img = get_result_img(fix_place);
+    result_img.style.backgroundColor = 'yellow';
+}
+function reset_bgcolor(){
+    for(let i = 0; i < 9; i++){
+      for(let j = 0; j < 9; j++){
+        set_uncolor(String(i)+String(j));
+      }
+    }
+  }
 function disp_imglist(){
     var fix_imglist = document.getElementsByClassName('horizontal-list')[0];
     fix_imglist.style.display = "block";
