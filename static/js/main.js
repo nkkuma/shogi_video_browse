@@ -37,7 +37,7 @@ var countup = function(){
 $(function(){
     $('#toggle-event').change(function() {
         if ($(this).prop('checked') == true) {
-            interval_id = setInterval(countup, 10000);
+            interval_id = setInterval(countup, 5000);
         } else if (interval_id != 0) {
             clearInterval(interval_id);
         }

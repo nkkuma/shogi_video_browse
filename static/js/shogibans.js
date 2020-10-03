@@ -72,7 +72,7 @@ function move_koma(json, sengo){
   // 但し、動かした場所に駒があればその駒を持ち駒とする
   if(result_json["ban_result"][fix_place]!=" ・"){
     // 持ち駒を一つ増やす
-    fix_mochigoma("add", sengo2string(sengo), raw2mochigoma(result_json["ban_result"][fix_place]));
+    fix_mochigoma("add", sengo2string(sengo+1), raw2mochigoma(result_json["ban_result"][fix_place]));
   }
   // 動かした場所に駒を示す
   if(json["to"]["nari"]==true){
